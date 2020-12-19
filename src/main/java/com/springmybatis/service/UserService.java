@@ -8,12 +8,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserService {
 
-
-    @Autowired
-    private UserMapper userMapper;
-
-    public void test(){
-        System.out.println(userMapper.selectById());
-    }
+//
+//    //Mybatis产生的userMapper代理对象---》Bean
+//    @Autowired
+//    private UserMapper userMapper;
+//
+//    public void test(){
+//        System.out.println(userMapper.selectById());
+//    }
 
 }

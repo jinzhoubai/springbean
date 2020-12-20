@@ -12,11 +12,13 @@ import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.core.type.classreading.MetadataReader;
 import org.springframework.core.type.classreading.MetadataReaderFactory;
 import org.springframework.core.type.filter.TypeFilter;
+import org.springframework.util.MultiValueMap;
 
 import java.awt.image.ImageConsumer;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class BeanDefinitionRegister implements ImportBeanDefinitionRegistrar {
   /*  @Override
@@ -33,7 +35,10 @@ public class BeanDefinitionRegister implements ImportBeanDefinitionRegistrar {
     @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry, BeanNameGenerator importBeanNameGenerator) {
 
-        String path = "springmybatis.mapper";
+//        String path = "springmybatis.mapper";
+        Map<String, Object> annotationAttributes = importingClassMetadata.getAnnotationAttributes(String.valueOf(TestScan.class));
+
+        String path = (String)annotationAttributes.get("value");
         TestMapperScanner scanner = new TestMapperScanner(registry);
         scanner.addIncludeFilter(new TypeFilter() {
             @Override

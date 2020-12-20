@@ -27,8 +27,8 @@ public class SpringMybaitApplication {
 //        System.out.println(applicationContext.getBean("user"));
 //        System.out.println(applicationContext.getBean("&user"));
 
-        UserService userService = applicationContext.getBean("user", UserService.class);
-        userService.test();
+//        UserService userService = applicationContext.getBean("user", UserService.class);
+//        userService.test();
 
     }
 }
